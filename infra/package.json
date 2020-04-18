@@ -5,7 +5,7 @@
     "infra": "infra.js"
   },
   "scripts": {
-    "cdk": "cdk"
+    "deploy": "cdk deploy"
   },
   "devDependencies": {
     "@aws-cdk/assert": "^1.16.3",

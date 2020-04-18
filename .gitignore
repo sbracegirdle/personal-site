@@ -1,1 +1,4 @@
 node_modules
+dist/
+tmp/
+site2/artifacts/

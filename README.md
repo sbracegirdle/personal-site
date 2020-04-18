@@ -4,7 +4,7 @@ This is the source code to my personal site; [bracegirdle.me](https://bracegirdl
 
 Tech stack:
 
-* Static html/css based on the Bootstrap framework and using the [Freelancer theme](https://github.com/BlackrockDigital/startbootstrap-freelancer).
+* Custom static html/css site built on top of [react-static](https://github.com/react-static/)
 * Hosted on AWS S3
 * Distributed via AWS CloudFront CDN
 * Certificates provided by AWS ACM
@@ -12,31 +12,20 @@ Tech stack:
 
 Structure:
 
-* `src` HTML/CSS source code for webpage
+* `site2` react-static project for site
 * `infra` CDK source code for AWS resources
-* `freelancer-theme` Customised Freelancer Bootstrap theme.
 
 
 ## Deployment
 
-Assuming AWS CLI and CDK is setup:
+Assuming AWS CLI and CDK is setup and NPM dependencies installed:
 
 ```s
-cd infra
-cdk deploy
+cd site2
+npm run build
+cd .../infra
+npm run deploy
 ```
-
-## Updating theme CSS
-
-e.g. for tweaking theme variables etc
-
-```s
-cd freelancer-theme
-npm i
-npm run css
-```
-
-(runs gulp CSS)
 
 
 ## License note
@@ -44,4 +33,3 @@ npm run css
 Please refer to the following licenses:
 
 * Simon's personal site [MIT license](https://bitbucket.org/si13b/personal-site/src/master/LICENSE)
-* Freelancer bootstrap theme [MIT license](https://bitbucket.org/si13b/personal-site/src/master/freelancer-theme/LICENSE) for .

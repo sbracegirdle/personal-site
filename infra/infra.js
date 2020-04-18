@@ -71,7 +71,7 @@ class PersonalSiteStack extends cdk.Stack {
     });
 
     new s3deploy.BucketDeployment(this, "DeployWithInvalidation", {
-      sources: [s3deploy.Source.asset("../src")],
+      sources: [s3deploy.Source.asset("../site2/dist")],
       destinationBucket: siteBucket,
       distribution,
       distributionPaths: ["/*"]
