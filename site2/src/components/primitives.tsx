@@ -1,7 +1,67 @@
 import React from 'react';
+import {Link as ReachLink} from '@reach/router';
 
 export const classes = (...clazz: string[]) => clazz && clazz.filter(i => !!i).join(' ');
 const c = classes;
+
+const Bullet = () => {
+  return (
+    <span className="mr-2">
+      <i className="fas fa-caret-right"></i>
+    </span>
+  );
+};
+
+export const Paragraph = ({children}: {children: React.ReactNode}) => <p className="my-4">{children}</p>;
+export const H1 = ({children}: {children: React.ReactNode}) => <p className="my-4 text-2xl">{children}</p>;
+export const H2 = ({children}: {children: React.ReactNode}) => <p className="my-4 text-2xl font-bold">{children}</p>;
+export const H3 = ({children}: {children: React.ReactNode}) => <p className="my-4 text-xl font-bold">{children}</p>;
+export const H4 = ({children}: {children: React.ReactNode}) => <p className="my-4 font-bold">{children}</p>;
+export const ListItem = ({children}: {children: React.ReactNode}) => (
+  <li className="my-2 mx-4">
+    <Bullet />
+    <span>{children}</span>
+  </li>
+);
+export const InlineCode = ({children}: {children: React.ReactNode}) => (
+  <code className="py-1 px-2 rounded my-1 inline bg-gray-800 text-purple-300 monospace">{children}</code>
+);
+
+export const Code = ({value}: {value: string; language: string}) => (
+  <pre className="py-2 px-3 rounded m-1 overflow-auto bg-gray-800 text-purple-300 monospace">
+    <code className="">
+      {/* {language}
+      <br /> */}
+      {value}
+    </code>
+  </pre>
+);
+
+export const ExternalLink = ({
+  href,
+  children,
+  className,
+  target,
+  rel
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  target?: string;
+  rel?: string;
+}) => (
+  <a
+    className={`${className || ''} underline text-orange-500 hover:text-orange-700`}
+    href={href}
+    target={target || '_blank'}
+    rel={rel || 'noopener noreferrer'}>
+    {children}
+  </a>
+);
+
+export const Link = (props: any) => (
+  <ReachLink {...props} className={`${props.className || ''} underline text-orange-500 hover:text-orange-700`} />
+);
 
 export const JumboHeading = ({
   className,
