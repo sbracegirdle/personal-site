@@ -28,7 +28,7 @@ Firstly, let's get an introduction to Kubernetes.
 
 To understand how Kubernetes can help us, we need to briefly revisit what Docker itself does. Docker allows you to build, push and pull Docker images. These images describe the software that you want to run and all of the dependencies. These images can be run in multiple environments and can be shared with others. One of the benefits of this is that you can be confident of a consistent operating environment, no matter where the image is run.
 
-Docker images run in the form of containers. A container is an isolated runtime environment which we can use to run web servers, databases, scripts and pretty much anything. Processes running inside the container do not impact processes outside the container. Conceptually we can consider them as mini virtual machines (VMs), but be aware that on a technical level they are quite different and you don't quite get the same level of isolation on a container that you do from a VM, but good enough for most cases.
+Docker images run in the form of containers. A container is an isolated runtime environment which we can use to run web servers, databases, scripts and pretty much anything. Processes running inside the container do not impact processes outside the container. Conceptually we can consider them to be mini virtual machines (VMs). You don't get the same kind of isolation on a container that you do from a VM, since they still run on the same shared kernel, but it's more than [good enough](https://docs.docker.com/engine/security/security/) for most cases.
 
 This is a very powerful tool to have. Previously we ran applications alongside each other on VMs which had a number of drawbacks; installing dependencies for those applications could potentially come into conflict, it was harder to replicate those environments in a consistent manner, we also had to manage the host itself, ensuring that it is configured correctly and that security updates are up to date.
 
@@ -342,4 +342,4 @@ A lot of what we did here was what we call "ClickOps", an approach where we crea
 
 We also didn't cover; volumes, logging, service discovery, labelling and monitoring, so if Kubernetes is a topic that interests you then I would encourage you to pursue further learning in those areas.
 
-Thanks for reading! Please let me know if there's anything I can start doing, stop doing or continue doing in further articles.
+Thanks for reading! Please let me know if there's anything you'd like to see more or less of in further articles.
